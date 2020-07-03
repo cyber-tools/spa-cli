@@ -6,8 +6,8 @@ const webpackMerge = require("webpack-merge");
 const WebpckDevServer = require("webpack-dev-server");
 
 
-const basicConfig = require("@/configs/webpack.base.js");
-const custmerConfig = require(path.resolve(process.cwd(), "./custmer.config.js"));
+const basicConfig = require("@/configs/webpack.base");
+const custmerConfig = require(path.resolve(process.cwd(), "./custmer.config"));
 
 
 const computedConfig = webpackMerge(basicConfig, custmerConfig);
