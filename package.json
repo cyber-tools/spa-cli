@@ -1,5 +1,5 @@
 {
-  "name": "guide-script",
+  "name": "spa-guide-script",
   "version": "1.0.0",
   "description": "插件式项目辅助引导助手",
   "main": "index.js",
@@ -40,6 +40,6 @@
     "@": "./"
   },
   "bin": {
-    "guide": "./index.js"
+    "spa-guide": "./index.js"
   }
 }
