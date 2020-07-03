@@ -41,5 +41,9 @@
   },
   "bin": {
     "build-spa": "./index.js"
+  },
+  "repository": {
+    "type": "github.com",
+    "url": "https://github.com/normalize-project/spa-build-core"
   }
 }
