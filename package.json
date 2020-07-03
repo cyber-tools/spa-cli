@@ -40,6 +40,6 @@
     "@": "./"
   },
   "bin": {
-    "spa-build": "./index.js"
+    "build-spa": "./index.js"
   }
 }
