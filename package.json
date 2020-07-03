@@ -1,7 +1,7 @@
 {
-  "name": "spa-guide-script",
+  "name": "spa-build-core",
   "version": "1.0.0",
-  "description": "插件式项目辅助引导助手",
+  "description": "单页应用核心构建组件",
   "main": "index.js",
   "scripts": {
     "dev": "guide"
@@ -40,6 +40,6 @@
     "@": "./"
   },
   "bin": {
-    "spa-guide": "./index.js"
+    "spa-build": "./index.js"
   }
 }
