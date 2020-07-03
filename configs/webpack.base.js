@@ -12,7 +12,7 @@ module.exports = {
 		filename: "[name].[hash].js"
 	},
 	devServer: {
-		// open: true,
+		open: true,
 		host: "127.0.0.1",
 		contentBase: process.cwd()
 	},
@@ -26,7 +26,9 @@ module.exports = {
 		rules: require("./rules.config.js")
 	},
 	plugins: [
-		new HtmlWebpackPlugin(),
+		new HtmlWebpackPlugin({
+			template: path.join(process.cwd(), "src", "index.html")
+		}),
 		new MiniCssExtractPlugin({
 			filename: "[name][hash:8].css",
 			chunkFilename: "[id].css"
