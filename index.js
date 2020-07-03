@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-require("module-alias/register");
+require("module-alias").addAlias("@", __dirname);
 const path = require("path");
 const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
