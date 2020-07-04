@@ -4,10 +4,10 @@ const path = require("path");
 const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
 const WebpckDevServer = require("webpack-dev-server");
-
+const getCustmerConfig = require("@/utils/getCustmerConfig");
 
 const basicConfig = require("@/configs/webpack.base");
-const custmerConfig = require(path.resolve(process.cwd(), "./custmer.config"));
+const custmerConfig = getCustmerConfig();
 
 
 const computedConfig = webpackMerge(basicConfig, custmerConfig);
