@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = [{
-	test: /.(js|jsx)$/,
+	test: /\.(js|jsx)$/,
 	exclude: /node_modules/,
 	use: [{
 		loader: require.resolve("babel-loader"),
@@ -25,21 +25,39 @@ module.exports = [{
 		}
 	}]
 }, {
+	test: /\.scss$/,
+	include: /node_modules/,
+	use: [{
+		loader: MiniCssExtractPlugin.loader,
+		options: { esModule: false }
+	}, {
+		loader: require.resolve("sass-loader")
+	}]
+}, {
+	test: /\.scss$/,
+	exclude: /node_modules/,
+	use: [{
+		loader: MiniCssExtractPlugin.loader,
+		options: { esModule: false }
+	}, {
+		loader: require.resolve("css-loader"),
+		options: { modules: true }
+	}, {
+		loader: require.resolve("sass-loader")
+	}]
+}, {
 	// 第三方less文件不走css-module
-	test: /.less$/,
+	test: /\.less$/,
 	include: /node_modules/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
 		options: { esModule: false }
 	}, {
 		loader: require.resolve("less-loader"),
-		options: {
-			// modifyVars: {},
-			// javascriptEnabled: true,
-		}
+		options: {}
 	}]
 }, {
-	test: /.less$/,
+	test: /\.less$/,
 	exclude: /node_modules/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
@@ -49,13 +67,10 @@ module.exports = [{
 		options: { modules: true }
 	}, {
 		loader: require.resolve("less-loader"),
-		options: {
-			// modifyVars: {},
-			// javascriptEnabled: true,
-		}
+		options: {}
 	}]
 }, {
-	test: /.css$/,
+	test: /\.css$/,
 	include: /node_modules/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
@@ -65,7 +80,7 @@ module.exports = [{
 		options: { modules: false }
 	}]
 }, {
-	test: /.css$/,
+	test: /\.css$/,
 	exclude: /node_modules/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
