@@ -53,3 +53,15 @@ module.exports={
 
 <h2 align="center">Commands</h2>
 
+开发指令：
+
+```bash
+build-spa dev
+```
+
+打包指令：
+
+``` bash
+build-spa build
+```
+
