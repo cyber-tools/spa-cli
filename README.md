@@ -1,6 +1,6 @@
 <h2 align="center">spa-build-core</h2>
 
-<div align="center">基于webpack的web项目集成开发环境</div>
+<div align="center">基于webpack的web项目集成开发环境，使用npm进行管理升级，让web项目开发简单化，规范化</div>
 
 <h2 align="center">概览</h2>
 
