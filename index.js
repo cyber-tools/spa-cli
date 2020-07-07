@@ -1,18 +1,39 @@
 #!/usr/bin/env node
 require("module-alias").addAlias("@", __dirname);
-const dotProp = require("dot-prop");
-const webpack = require("webpack");
-const webpackMerge = require("webpack-merge");
-const WebpckDevServer = require("webpack-dev-server");
-const getCustmerConfig = require("@/utils/getCustmerConfig");
+const { program, description } = require("commander");
+const json = require("@/package.json");
 
-const basicConfig = require("@/configs/webpack.base");
-const custmerConfig = getCustmerConfig();
+process.on("uncaughtException", (error) => {
+  console.log(error);
+  process.exit(0);
+});
+
+process.on("unhandledRejection", (error) => {
+  console.log(error);
+  process.exit(0);
+});
+
+program
+  .name(json.name)
+  .usage("build-spa command")
+  .version(json.version);
+
+program
+  .command("dev")
+  .description("开发模式")
+  .action(require("@/actions/development"));
+
+program
+  .command("build")
+  .description("编译成生产环境")
+  .action(require("@/actions/production"));
+
+program.parse(process.argv);
 
 
-const computedConfig = webpackMerge(basicConfig, custmerConfig);
-const complier = webpack(computedConfig);
-const server = new WebpckDevServer(complier, computedConfig.devServer);
-server.listen(dotProp.get(computedConfig, "devServer.port") || 8080);
+
+
+
+
 
 
