@@ -14,13 +14,13 @@
 可以作为开发依赖安装：
 
 ```bash
-npm install normalize-project/spa-build-core --save-dev
+npm install nice-web-work/spa-build-core --save-dev
 ```
 
 也可以全局安装：
 
 ```bash
-npm install normalize-project/spa-build-core -g
+npm install nice-web-work/spa-build-core -g
 ```
 
 
