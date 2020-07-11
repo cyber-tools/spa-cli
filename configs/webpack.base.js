@@ -1,9 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const rules = require("./rules.config.js");
 
 
-module.exports = ({ source = "./src", dist = "./dist" }) => ({
+module.exports = ({ source = "src", dist = "dist" }) => ({
 	mode: "development",
 	devtool: "source-map",
 	entry: path.resolve(process.cwd(), source, "index.js"),
@@ -22,9 +23,7 @@ module.exports = ({ source = "./src", dist = "./dist" }) => ({
 		},
 		extensions: [".css", ".scss", ".less", ".js", ".jsx", ".json"]
 	},
-	module: {
-		rules: require("./rules.config.js")
-	},
+	module: { rules },
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.join(process.cwd(), source, "index.html")

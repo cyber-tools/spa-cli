@@ -7,9 +7,9 @@ const getCustmerConfig = require("@/utils/getCustmerConfig");
 
 module.exports = async () => {
   try {
-    const custmerConfig = getCustmerConfig();
-    const { source, dist } = custmerConfig;
-    const computedConfig = webpackMerge(getBasicConfig({ source, dist }), custmerConfig);
+    const { source, dist, ...custmerConfig } = getCustmerConfig();
+    const basicConfig = getBasicConfig({ source, dist });
+    const computedConfig = webpackMerge(basicConfig, custmerConfig);
     const complier = webpack(computedConfig);
     await new Promise((resolve, reject) => {
       complier.run((error, stat) => {
