@@ -1,10 +1,9 @@
 const path = require("path");
 
 module.exports = async () => {
-  const babelrcModuleResolve = require.resolve("./babelrc.js", {
-    paths: [process.cwd(), path.relative(__dirname, "confins")]
+  const babelrcModuleResolve = require.resolve("./.babelrc.js", {
+    paths: [process.cwd(), path.join(__dirname, "configs")]
   });
   const babelrc = require(babelrcModuleResolve);
-  console.log("babelrc==>", babelrc);
   return babelrc;
 };
