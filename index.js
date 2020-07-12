@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 require("module-alias").addAlias("@", __dirname);
-const { program, description } = require("commander");
+const { program } = require("commander");
 const json = require("@/package.json");
 
 process.on("uncaughtException", (error) => {
