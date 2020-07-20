@@ -1,5 +1,5 @@
 {
-  "name": "spa-build-core",
+  "name": "spa-cli",
   "version": "1.0.3",
   "description": "单页应用核心构建组件",
   "main": "index.js",
@@ -40,7 +40,7 @@
     "webpack-merge": "^4.2.2"
   },
   "bin": {
-    "build-spa": "./index.js"
+    "spa": "./index.js"
   },
   "repository": {
     "type": "github.com",
