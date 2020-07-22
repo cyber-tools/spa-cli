@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = async () => {
+module.exports = () => {
   const babelrcModuleResolve = require.resolve("./.babelrc.js", {
     paths: [process.cwd(), path.resolve(__dirname, "../configs")]
   });

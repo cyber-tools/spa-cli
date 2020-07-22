@@ -15,6 +15,7 @@ module.exports = ({ source = "src", dist = "dist" }) => ({
 	devServer: {
 		open: true,
 		host: "127.0.0.1",
+		historyApiFallback: true,
 		contentBase: process.cwd()
 	},
 	resolve: {
