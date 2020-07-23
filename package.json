@@ -1,5 +1,5 @@
 {
-  "name": "spa-cli",
+  "name": "@cyber/spa-cli",
   "version": "1.0.3",
   "description": "单页应用核心构建组件",
   "main": "index.js",
@@ -40,10 +40,6 @@
     "webpack-merge": "^4.2.2"
   },
   "bin": {
-    "spa": "./index.js"
-  },
-  "repository": {
-    "type": "github.com",
-    "url": "https://github.com/normalize-project/spa-build-core"
+    "cyber-spa": "./index.js"
   }
 }
