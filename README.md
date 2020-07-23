@@ -1,4 +1,4 @@
-<h2 align="center">spa-build-core</h2>
+<h2 align="center">@cyber/spa-cli</h2>
 
 <div align="center">基于webpack的web项目集成开发环境，使用npm进行管理升级，让web项目开发简单化，规范化</div>
 
@@ -14,13 +14,13 @@
 可以作为开发依赖安装：
 
 ```bash
-npm install nice-web-work/spa-build-core --save-dev
+npm install cyber-worker/spa-cli --save-dev
 ```
 
 也可以全局安装：
 
 ```bash
-npm install nice-web-work/spa-build-core -g
+npm install cyber-worker/spa-cli -g
 ```
 
 
@@ -29,7 +29,7 @@ npm install nice-web-work/spa-build-core -g
 
 
 
-build-core用于快速构筑项目(不需要自己配置webpack)，只需要覆盖少量配置即进行快速开发，后期依赖npm进行升级，尽可能保证加脚手架的可维护性
+cyber-spa用于快速构筑项目(不需要自己配置webpack)，只需要覆盖少量配置即进行快速开发，后期依赖npm进行升级，尽可能保证加脚手架的可维护性
 
 - 配置项通过[webpack-merge](https://www.npmjs.com/package/webpack-merge)进行合并
 - 集成了webpack等大部分开发依赖
@@ -56,12 +56,12 @@ module.exports={
 开发指令：
 
 ```bash
-build-spa dev
+cyber-spa dev
 ```
 
 打包指令：
 
 ``` bash
-build-spa build
+cyber-spa  build
 ```
 
