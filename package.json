@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "guide"
   },
-  "keywords": [],
+  "keywords": [
+    "cyber"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
