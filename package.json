@@ -1,5 +1,5 @@
 {
-  "name": "@cyber-work/spa-cli",
+  "name": "@cyber-tools/spa-cli",
   "version": "1.0.4",
   "description": "单页应用核心构建组件",
   "main": "index.js",
