@@ -1,4 +1,4 @@
-<h2 align="center">@cyber/spa-cli</h2>
+<h2 align="center">@cyber-tools/spa-cli</h2>
 
 <div align="center">基于webpack的web项目集成开发环境，使用npm进行管理升级，让web项目开发简单化，规范化</div>
 
@@ -14,13 +14,13 @@
 可以作为开发依赖安装：
 
 ```bash
-npm install cyber-worker/spa-cli --save-dev
+npm install @cyber-tools/spa-cli --save-dev
 ```
 
 也可以全局安装：
 
 ```bash
-npm install cyber-worker/spa-cli -g
+npm install @cyber-tools/spa-cli -g
 ```
 
 
