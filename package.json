@@ -1,5 +1,5 @@
 {
-  "name": "@cyber/spa-cli",
+  "name": "@cyber-work/spa-cli",
   "version": "1.0.3",
   "description": "单页应用核心构建组件",
   "main": "index.js",
@@ -41,5 +41,9 @@
   },
   "bin": {
     "cyber-spa": "./index.js"
+  },
+  "repository": {
+    "type": "github.com",
+    "url": "https://github.com/cyber-worker/spa-cli"
   }
 }
