@@ -22,7 +22,7 @@ module.exports = ({ source = "src", dist = "dist" }) => ({
 		alias: {
 			"@": path.resolve(process.cwd(), source)
 		},
-		extensions: [".css", ".scss", ".less", ".js", ".jsx", ".json"]
+		extensions: [".css", ".scss", ".less", ".ts", ".js", ".jsx", ".tsx", ".json"]
 	},
 	module: { rules },
 	plugins: [
