@@ -1,28 +1,14 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const getBabelConfig = require("@/utils/getBabelConfig");
 
-const { presets, ...otherConfig } = getBabelConfig();
 
 
 module.exports = [{
-	test: /\.(ts|tsx)$/,
-	exclude: /node_modules/,
-	use: [{
-		loader: require.resolve("babel-loader"),
-		options: {
-			presets: [
-				...presets,
-				require.resolve("@babel/preset-typescript")
-			],
-			...otherConfig
-		}
-	}]
-}, {
 	test: /\.(js|jsx)$/,
 	exclude: /node_modules/,
 	use: [{
 		loader: require.resolve("babel-loader"),
-		options: { presets, ...otherConfig }
+		options: getBabelConfig()
 	}]
 }, {
 	test: /\.scss$/,
