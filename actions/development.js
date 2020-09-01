@@ -8,8 +8,8 @@ const getCustmerConfig = require("@/utils/getCustmerConfig");
 
 
 module.exports = () => {
-  const { source, dist, ...custmerConfig } = getCustmerConfig();
-  const basicConfig = getBasicConfig({ source, dist });
+  const { source, dist, exclude, ...custmerConfig } = getCustmerConfig();
+  const basicConfig = getBasicConfig({ source, dist, exclude });
   const computedConfig = webpackMerge(basicConfig, custmerConfig);
   const complier = webpack(computedConfig);
   const server = new WebpckDevServer(complier, computedConfig.devServer);

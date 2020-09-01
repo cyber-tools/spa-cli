@@ -3,25 +3,27 @@ const getBabelConfig = require("@/utils/getBabelConfig");
 
 
 
-module.exports = [{
+module.exports = ({ exclude }) => ([{
+	exclude,
 	test: /\.(js|jsx)$/,
-	exclude: /node_modules/,
 	use: [{
 		loader: require.resolve("babel-loader"),
 		options: getBabelConfig()
 	}]
 }, {
 	test: /\.scss$/,
-	include: /node_modules/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
 		options: { esModule: false }
 	}, {
+		loader: require.resolve("css-loader"),
+		options: { modules: false }
+	}, {
 		loader: require.resolve("sass-loader")
 	}]
 }, {
-	test: /\.scss$/,
-	exclude: /node_modules/,
+	exclude,
+	test: /\.module.scss$/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
 		options: { esModule: false }
@@ -34,17 +36,19 @@ module.exports = [{
 }, {
 	// 第三方less文件不走css-module
 	test: /\.less$/,
-	include: /node_modules/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
 		options: { esModule: false }
+	}, {
+		loader: require.resolve("css-loader"),
+		options: { modules: false }
 	}, {
 		loader: require.resolve("less-loader"),
 		options: {}
 	}]
 }, {
-	test: /\.less$/,
-	exclude: /node_modules/,
+	exclude,
+	test: /\.module.less$/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
 		options: { esModule: true }
@@ -57,7 +61,6 @@ module.exports = [{
 	}]
 }, {
 	test: /\.css$/,
-	include: /node_modules/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
 		options: { esModule: true }
@@ -66,8 +69,8 @@ module.exports = [{
 		options: { modules: false }
 	}]
 }, {
-	test: /\.css$/,
-	exclude: /node_modules/,
+	exclude,
+	test: /\.module.css$/,
 	use: [{
 		loader: MiniCssExtractPlugin.loader,
 		options: { esModule: true }
@@ -75,4 +78,4 @@ module.exports = [{
 		loader: require.resolve("css-loader"),
 		options: { modules: true }
 	}]
-}]
+}]);
