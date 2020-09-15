@@ -41,6 +41,7 @@ cyber-spa用于快速构筑项目(不需要自己配置webpack)，只需要覆�
 在proxy文件夹中的所有问文件均会在开发模式下运行
 代理效果请参考[http-proxy-middleware](https://www.npmjs.com/package/http-proxy-middleware)的使用文档
 使用示例:
+
 ```javascript
 module.exports={
   "/test1":{
