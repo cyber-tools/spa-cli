@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const babelRules = require("@/configs/babel.rules");
 const styleRules = require("@/configs/style.rules");
-
+const resourcesRules = require("@/configs/resources.rules");
 
 module.exports = ({ source, dist, exclude }) => ({
 	devtool: "source-map",
@@ -17,7 +17,7 @@ module.exports = ({ source, dist, exclude }) => ({
 		open: true,
 		host: "127.0.0.1",
 		historyApiFallback: true,
-		contentBase: process.cwd()
+		contentBase: path.resolve(process.cwd(), source)
 	},
 	resolve: {
 		alias: {
@@ -26,7 +26,11 @@ module.exports = ({ source, dist, exclude }) => ({
 		extensions: [".ts", ".js", ".jsx", ".tsx", ".json"]
 	},
 	module: {
-		rules: [...babelRules({ exclude }), ...styleRules({ exclude })]
+		rules: [
+			...babelRules({ exclude }),
+			...styleRules({ exclude }),
+			...resourcesRules({ exclude })
+		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
