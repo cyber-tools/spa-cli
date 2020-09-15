@@ -1,11 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const rulesConfig = require("./rules.config.js");
+
+const rulesConfig = require("@/configs/rules.config");
 
 
 module.exports = ({ source, dist, exclude }) => ({
-	mode: "development",
 	devtool: "source-map",
 	entry: path.resolve(process.cwd(), source, "index.js"),
 	output: {
@@ -22,7 +22,7 @@ module.exports = ({ source, dist, exclude }) => ({
 		alias: {
 			"@": path.resolve(process.cwd(), source)
 		},
-		extensions: [".css", ".scss", ".less", ".ts", ".js", ".jsx", ".tsx", ".json"]
+		extensions: [".ts", ".js", ".jsx", ".tsx", ".json"]
 	},
 	module: {
 		rules: rulesConfig({ exclude })

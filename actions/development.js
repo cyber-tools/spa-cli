@@ -10,7 +10,9 @@ const getCustmerConfig = require("@/utils/getCustmerConfig");
 module.exports = () => {
   const { source, dist, exclude, ...custmerConfig } = getCustmerConfig();
   const basicConfig = getBasicConfig({ source, dist, exclude });
-  const computedConfig = webpackMerge(basicConfig, custmerConfig);
+  const computedConfig = webpackMerge(basicConfig, custmerConfig, {
+    mode: "development"
+  });
   const complier = webpack(computedConfig);
   const server = new WebpckDevServer(complier, computedConfig.devServer);
   server.listen(dotProp.get(computedConfig, "devServer.port") || 8080);
