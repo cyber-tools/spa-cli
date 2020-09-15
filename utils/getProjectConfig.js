@@ -1,11 +1,11 @@
 const path = require("path");
 const deepExtend = require("deep-extend");
 
-const basicConfig = require("@/configs/defaultConfig/custmer.config");
+const basicConfig = require("@/configs/defaultConfig/project.config");
 
 
 module.exports = function () {
-  const custmerFilePathResolve = require.resolve("./custmer.config.js", {
+  const custmerFilePathResolve = require.resolve("./project.config", {
     paths: [process.cwd(), path.resolve(__dirname, "../configs/defaultConfig/")]
   });
   const custmerConfig = require(custmerFilePathResolve);

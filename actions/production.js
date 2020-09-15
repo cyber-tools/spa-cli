@@ -4,12 +4,12 @@ const webpackMerge = require("webpack-merge");
 
 const toast = require("@/utils/toast");
 const getBasicConfig = require("@/configs/webpack.base");
-const getCustmerConfig = require("@/utils/getCustmerConfig");
+const getProjectConfig = require("@/utils/getProjectConfig");
 
 
 module.exports = async () => {
   try {
-    const { source, dist, exclude, ...custmerConfig } = getCustmerConfig();
+    const { source, dist, exclude, ...custmerConfig } = getProjectConfig();
     const basicConfig = getBasicConfig({ source, dist, exclude });
     const computedConfig = webpackMerge(basicConfig, custmerConfig, {
       mode: "production",

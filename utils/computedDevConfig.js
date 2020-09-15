@@ -2,9 +2,9 @@ const apiMocker = require("mocker-api");
 const deepExtend = require("deep-extend");
 
 
-module.exports = function ({ originDevConfig, proxyConfig, mockFileList }) {
+module.exports = function ({ originDevConfig, proxyAssignConfig, mockFileList }) {
   const devServerConfig = deepExtend({}, originDevConfig, {
-    proxy: proxyConfig,
+    proxy: proxyAssignConfig,
     before: (app) => {
       apiMocker(app, mockFileList)
     }
