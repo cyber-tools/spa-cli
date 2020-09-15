@@ -6,7 +6,9 @@ const babelRules = require("@/configs/babel.rules");
 const styleRules = require("@/configs/style.rules");
 const resourcesRules = require("@/configs/resources.rules");
 
-module.exports = ({ source, dist, exclude }) => ({
+const { source, dist, exclude } = require("@/utils/getProjectConfig")();
+
+module.exports = {
 	devtool: "source-map",
 	entry: path.resolve(process.cwd(), source, "index.js"),
 	output: {
@@ -15,7 +17,6 @@ module.exports = ({ source, dist, exclude }) => ({
 	},
 	devServer: {
 		open: true,
-		host: "127.0.0.1",
 		historyApiFallback: true,
 		contentBase: path.resolve(process.cwd(), source)
 	},
@@ -41,4 +42,4 @@ module.exports = ({ source, dist, exclude }) => ({
 			chunkFilename: "[id].css"
 		})
 	]
-});
+};

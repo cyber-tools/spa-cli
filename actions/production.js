@@ -1,24 +1,16 @@
 const del = require("del");
 const webpack = require("webpack");
-const webpackMerge = require("webpack-merge");
 
 const toast = require("@/utils/toast");
-const getBasicConfig = require("@/configs/webpack.base");
-const getProjectConfig = require("@/utils/getProjectConfig");
-
+const { dist } = require("@/utils/getProjectConfig")();
+const webpackProdConfig = require("@/configs/webpack.prod.config");
 
 module.exports = async () => {
   try {
-    const { source, dist, exclude, ...custmerConfig } = getProjectConfig();
-    const basicConfig = getBasicConfig({ source, dist, exclude });
-    const computedConfig = webpackMerge(basicConfig, custmerConfig, {
-      mode: "production",
-      devtool: "none"
-    });
     toast.start(["正在移除", dist, "文件夹... ..."].join(""));
     await del([dist]);
     toast.succeed([dist, "文件夹移除成功!"].join(""));
-    const complier = webpack(computedConfig);
+    const complier = webpack(webpackProdConfig);
     toast.start("代码构筑中,请稍后... ...");
     await new Promise((resolve, reject) => {
       complier.run((error, stat) => {
