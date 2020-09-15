@@ -2,7 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const rulesConfig = require("@/configs/rules.config");
+const babelRules = require("@/configs/babel.rules");
+const styleRules = require("@/configs/style.rules");
 
 
 module.exports = ({ source, dist, exclude }) => ({
@@ -25,7 +26,7 @@ module.exports = ({ source, dist, exclude }) => ({
 		extensions: [".ts", ".js", ".jsx", ".tsx", ".json"]
 	},
 	module: {
-		rules: rulesConfig({ exclude })
+		rules: [...babelRules({ exclude }), ...styleRules({ exclude })]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
