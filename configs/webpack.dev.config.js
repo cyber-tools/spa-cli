@@ -1,6 +1,9 @@
 const merge = require("webpack-merge");
 
 const basicWebpackConfig = require("@/configs/webpack.base.config");
-const { source, dist, exclude, ...projectConfig } = require("@/utils/getProjectConfig")();
+const { devServer, webpackConfig: projectWebpackConfig } = require("@/utils/getProjectConfig")();
 
-module.exports = merge(basicWebpackConfig, projectConfig, { mode: "development" });
+module.exports = merge(basicWebpackConfig, projectWebpackConfig, {
+  devServer,
+  mode: "development"
+});

@@ -5,7 +5,9 @@ module.exports = {
   exclude: [/node_modules/],
   devServer: {
     port: 8000,
-    open: true,
-    useLocalIp: false
+    open: true
+  },
+  webpackConfig: {
+
   }
 };

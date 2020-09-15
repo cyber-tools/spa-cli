@@ -7,7 +7,11 @@ module.exports = ({ exclude }) => ([{
   test: /\.scss$/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
-    options: { esModule: false }
+    options: {
+      hmr: true,
+      reloadAll: true,
+      esModule: false
+    }
   }, {
     loader: require.resolve("css-loader"),
     options: { modules: true }
@@ -22,7 +26,11 @@ module.exports = ({ exclude }) => ([{
   include: /node_modules/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
-    options: { esModule: true }
+    options: {
+      hmr: true,
+      reloadAll: true,
+      esModule: true
+    }
   }, {
     loader: require.resolve("css-loader"),
     options: { modules: false }
@@ -34,7 +42,11 @@ module.exports = ({ exclude }) => ([{
   test: /\.less$/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
-    options: { esModule: false }
+    options: {
+      hmr: true,
+      reloadAll: true,
+      esModule: false
+    }
   }, {
     loader: require.resolve("css-loader"),
     options: {
@@ -52,7 +64,11 @@ module.exports = ({ exclude }) => ([{
   include: /node_modules/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
-    options: { esModule: false }
+    options: {
+      hmr: true,
+      reloadAll: true,
+      esModule: false
+    }
   }, {
     loader: require.resolve("css-loader"),
     options: { modules: false }
@@ -65,7 +81,11 @@ module.exports = ({ exclude }) => ([{
   test: /\.css$/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
-    options: { esModule: false }
+    options: {
+      hmr: true,
+      reloadAll: true,
+      esModule: false
+    }
   }, {
     loader: require.resolve("css-loader"),
     options: { modules: true }
@@ -78,7 +98,11 @@ module.exports = ({ exclude }) => ([{
   include: /node_modules/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
-    options: { esModule: false }
+    options: {
+      hmr: true,
+      reloadAll: true,
+      esModule: false
+    }
   }, {
     loader: require.resolve("css-loader"),
     options: { modules: true }
