@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const postcssConfig = require("@/configs/defaultConfig/postcss.config");
 
-const postcssConfig = require("@/configs/postcss.config");
 
 module.exports = ({ exclude }) => ([{
   exclude,
@@ -37,7 +37,9 @@ module.exports = ({ exclude }) => ([{
     options: { esModule: false }
   }, {
     loader: require.resolve("css-loader"),
-    options: { modules: true }
+    options: {
+      modules: true
+    }
   }, {
     loader: require.resolve("less-loader"),
     options: {}
