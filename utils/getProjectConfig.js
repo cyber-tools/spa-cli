@@ -1,5 +1,5 @@
 const path = require("path");
-const deepExtend = require("deep-extend");
+const merge = require("webpack-merge");
 const filterObject = require("filter-obj");
 
 const basicPeojectConfig = require("@/configs/defaultConfig/project.config");
@@ -10,7 +10,7 @@ module.exports = function () {
     paths: [process.cwd(), path.resolve(__dirname, "../configs/defaultConfig/")]
   });
   const custmerConfig = require(custmerFilePathResolve);
-  const { webpackConfig, ...otherConfig } = deepExtend(basicPeojectConfig, custmerConfig);
+  const { webpackConfig, ...otherConfig } = merge(basicPeojectConfig, custmerConfig);
   const purifyWebpackConfig = filterObject(webpackConfig, (keyname) => {
     if (keyname === "entry") {
       return false;
