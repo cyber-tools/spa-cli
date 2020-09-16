@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const postcssConfig = require("@/configs/defaultConfig/postcss.config");
+const getPostcssConfig = require("@/utils/getPostcssConfig");
 
+const postcssConfig = getPostcssConfig();
 
 module.exports = ({ exclude }) => ([{
   exclude,
@@ -36,6 +37,9 @@ module.exports = ({ exclude }) => ([{
     options: { modules: false }
   }, {
     loader: require.resolve("sass-loader")
+  }, {
+    loader: require.resolve("postcss-loader"),
+    options: postcssConfig
   }]
 }, {
   exclude,
@@ -75,6 +79,9 @@ module.exports = ({ exclude }) => ([{
   }, {
     loader: require.resolve("less-loader"),
     options: {}
+  }, {
+    loader: require.resolve("postcss-loader"),
+    options: postcssConfig
   }]
 }, {
   exclude,
@@ -106,5 +113,8 @@ module.exports = ({ exclude }) => ([{
   }, {
     loader: require.resolve("css-loader"),
     options: { modules: true }
+  }, {
+    loader: require.resolve("postcss-loader"),
+    options: postcssConfig
   }]
 }])
