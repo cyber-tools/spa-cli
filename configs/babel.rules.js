@@ -1,4 +1,3 @@
-const path = require("path");
 const babelConfig = require("@cyber-config/babel-config");
 
 module.exports = ({ exclude }) => ([{
