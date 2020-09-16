@@ -17,10 +17,10 @@ module.exports = ({ exclude }) => ([{
     loader: require.resolve("css-loader"),
     options: { modules: true }
   }, {
-    loader: require.resolve("sass-loader")
-  }, {
     loader: require.resolve("postcss-loader"),
     options: postcssConfig
+  }, {
+    loader: require.resolve("sass-loader")
   }]
 }, {
   test: /\.scss$/,
@@ -36,10 +36,10 @@ module.exports = ({ exclude }) => ([{
     loader: require.resolve("css-loader"),
     options: { modules: false }
   }, {
-    loader: require.resolve("sass-loader")
-  }, {
     loader: require.resolve("postcss-loader"),
     options: postcssConfig
+  }, {
+    loader: require.resolve("sass-loader")
   }]
 }, {
   exclude,
@@ -57,11 +57,11 @@ module.exports = ({ exclude }) => ([{
       modules: true
     }
   }, {
-    loader: require.resolve("less-loader"),
-    options: {}
-  }, {
     loader: require.resolve("postcss-loader"),
     options: postcssConfig
+  }, {
+    loader: require.resolve("less-loader"),
+    options: {}
   }]
 }, {
   test: /\.less$/,
@@ -77,11 +77,11 @@ module.exports = ({ exclude }) => ([{
     loader: require.resolve("css-loader"),
     options: { modules: false }
   }, {
-    loader: require.resolve("less-loader"),
-    options: {}
-  }, {
     loader: require.resolve("postcss-loader"),
     options: postcssConfig
+  }, {
+    loader: require.resolve("less-loader"),
+    options: {}
   }]
 }, {
   exclude,
