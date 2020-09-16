@@ -1,6 +1,6 @@
 {
   "name": "@cyber-tools/spa-cli",
-  "version": "5.1.1",
+  "version": "5.2.0",
   "description": "单页应用核心构建组件",
   "main": "index.js",
   "scripts": {
