@@ -1,3 +1,4 @@
+const path = require("path");
 
 module.exports = {
   dist: "dist",
@@ -5,7 +6,8 @@ module.exports = {
   exclude: [/node_modules/],
   devServer: {
     port: 8000,
-    open: true
+    open: true,
+    contentBase: path.resolve(process.cwd(), "./dist/")
   },
   webpackConfig: {
 
