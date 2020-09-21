@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   dist: "dist",
   source: "src",
+  publicPath: "./",
   exclude: [/node_modules/],
   devServer: {
     port: 8000,

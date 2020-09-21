@@ -3,13 +3,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const postcssNodeModuleConfig = require("@/configs/defaultConfig/postcss.node_modules");
 const postcssUserConfig = require("@/configs/defaultConfig/postcss.user_config");;
 
-module.exports = ({ exclude }) => ([{
+module.exports = ({ exclude, publicPath }) => ([{
   exclude,
   test: /\.scss$/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
     options: {
       hmr: true,
+      publicPath,
       reloadAll: true,
       esModule: false
     }
@@ -29,6 +30,7 @@ module.exports = ({ exclude }) => ([{
     loader: MiniCssExtractPlugin.loader,
     options: {
       hmr: true,
+      publicPath,
       reloadAll: true,
       esModule: true
     }
@@ -48,6 +50,7 @@ module.exports = ({ exclude }) => ([{
     loader: MiniCssExtractPlugin.loader,
     options: {
       hmr: true,
+      publicPath,
       reloadAll: true,
       esModule: false
     }
@@ -70,6 +73,7 @@ module.exports = ({ exclude }) => ([{
     loader: MiniCssExtractPlugin.loader,
     options: {
       hmr: true,
+      publicPath,
       reloadAll: true,
       esModule: false
     }
@@ -90,6 +94,7 @@ module.exports = ({ exclude }) => ([{
     loader: MiniCssExtractPlugin.loader,
     options: {
       hmr: true,
+      publicPath,
       reloadAll: true,
       esModule: false
     }
@@ -107,6 +112,7 @@ module.exports = ({ exclude }) => ([{
     loader: MiniCssExtractPlugin.loader,
     options: {
       hmr: true,
+      publicPath,
       reloadAll: true,
       esModule: false
     }

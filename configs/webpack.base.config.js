@@ -7,7 +7,7 @@ const styleRules = require("@/configs/style.rules");
 const resourcesRules = require("@/configs/resources.rules");
 
 const getPluginFileList = require("@/utils/getPluginFileList");
-const { source, dist, exclude } = require("@/utils/getProjectConfig")();
+const { source, dist, publicPath, exclude } = require("@/utils/getProjectConfig")();
 
 module.exports = {
 	devtool: "source-map",
@@ -16,6 +16,7 @@ module.exports = {
 		return [...pluginFileList, path.resolve(process.cwd(), source, "index.js")]
 	}),
 	output: {
+		publicPath,
 		path: path.resolve(process.cwd(), dist),
 		filename: "[name].[hash].js"
 	},
@@ -33,8 +34,8 @@ module.exports = {
 	module: {
 		rules: [
 			...babelRules({ exclude }),
-			...styleRules({ exclude }),
-			...resourcesRules({ exclude })
+			...styleRules({ exclude, publicPath }),
+			...resourcesRules({ exclude, publicPath })
 		]
 	},
 	plugins: [
