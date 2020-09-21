@@ -8,7 +8,9 @@ module.exports = {
   devServer: {
     port: 8000,
     open: true,
-    contentBase: path.resolve(process.cwd(), "./dist/")
+    useLocalIp: true,
+    historyApiFallback: true,
+    contentBase: path.resolve(process.cwd(), "src")
   },
   webpackConfig: {
 
